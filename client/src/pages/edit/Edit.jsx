@@ -24,7 +24,7 @@ const Edit = () => {
 
   const getUser = async (id) => {
     const res = await axios.get(
-      `https://user-management-api1.vercel.app/users/${id}`
+      `https://user-management-api1.vercel.app/${id}`
     );
 
     if (res.status === 200) {
@@ -34,7 +34,7 @@ const Edit = () => {
 
   const createUser = async (data) => {
     const res = await axios.post(
-      'https://user-management-api1.vercel.app/users',
+      'https://user-management-api1.vercel.app/',
       data
     );
 
@@ -45,7 +45,7 @@ const Edit = () => {
 
   const updateUser = async (data, id) => {
     const res = await axios.put(
-      `https://user-management-api1.vercel.app/users/${id}`,
+      `https://user-management-api1.vercel.app/${id}`,
       data
     );
 

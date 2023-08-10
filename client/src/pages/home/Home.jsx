@@ -10,9 +10,7 @@ const Home = () => {
   }, []);
 
   const getUsers = async () => {
-    const res = await axios.get(
-      'https://user-management-api1.vercel.app/users'
-    );
+    const res = await axios.get('https://user-management-api1.vercel.app/');
 
     if (res.status === 200) {
       setdata(res.data);
@@ -22,7 +20,7 @@ const Home = () => {
   const deleteUser = async (id) => {
     if (window.confirm('Are you sure?')) {
       const res = await axios.delete(
-        `https://user-management-api1.vercel.app/users/${id}`
+        `https://user-management-api1.vercel.app/${id}`
       );
 
       if (res.status === 200) {

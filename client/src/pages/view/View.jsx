@@ -15,7 +15,7 @@ const View = () => {
 
   const getUser = async (id) => {
     const res = await axios.get(
-      `https://user-management-api1.vercel.app/users/${id}`
+      `https://user-management-api1.vercel.app/${id}`
     );
 
     if (res.status === 200) {
