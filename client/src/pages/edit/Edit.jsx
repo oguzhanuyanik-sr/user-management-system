@@ -23,7 +23,9 @@ const Edit = () => {
   }, [id]);
 
   const getUser = async (id) => {
-    const res = await axios.get(`http://localhost:5000/users/${id}`);
+    const res = await axios.get(
+      `https://user-management-api1.vercel.app/users/${id}`
+    );
 
     if (res.status === 200) {
       setData({ ...res.data });
@@ -31,7 +33,10 @@ const Edit = () => {
   };
 
   const createUser = async (data) => {
-    const res = await axios.post('http://localhost:5000/users', data);
+    const res = await axios.post(
+      'https://user-management-api1.vercel.app/users',
+      data
+    );
 
     if (res.status === 200) {
       toast.success(res.data);
@@ -39,7 +44,10 @@ const Edit = () => {
   };
 
   const updateUser = async (data, id) => {
-    const res = await axios.put(`http://localhost:5000/users/${id}`, data);
+    const res = await axios.put(
+      `https://user-management-api1.vercel.app/users/${id}`,
+      data
+    );
 
     if (res.status === 200) {
       toast.success(res.data);

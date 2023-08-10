@@ -14,7 +14,9 @@ const View = () => {
   }, [id]);
 
   const getUser = async (id) => {
-    const res = await axios.get(`http://localhost:5000/users/${id}`);
+    const res = await axios.get(
+      `https://user-management-api1.vercel.app/users/${id}`
+    );
 
     if (res.status === 200) {
       setUser({ ...res.data });

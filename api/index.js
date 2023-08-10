@@ -1,17 +1,27 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import usersRouter from './routes/users.js';
 import cors from 'cors';
 
 const port = 5000;
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use('/users', usersRouter);
-app.use('*', (req, res) => {
-  res.status(404).send('Page not found');
-});
+app.use(
+  cors({
+    origin: 'https://user-management-client1.vercel.app',
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    credentials: true,
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'Access-Control-Allow-Origin',
+    ],
+  })
+);
+
+app.options('*', cors());
+app.use(express.json());
+
+app.use('/', usersRouter);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
