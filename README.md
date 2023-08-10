@@ -1,7 +1,7 @@
 # User Management System
 
 ```
-Tailwind, React, React Router, React Toastify, Axios, Express
+React, React Router, React Toastify, Axios, Express, Tailwind
 ```
 
 ### <a href="https://user-management-client1.vercel.app/">Live Demo</a>
